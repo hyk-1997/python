@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12306</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="panel-heading">
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <span> / </span>
+        <li class="active"><a href="{% url '12306' %}">12306</a></li>
+    </ol>
+</div>
+<form action="{% url '12306' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="num" placeholder="输入1-8 多个按空格分隔">
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>

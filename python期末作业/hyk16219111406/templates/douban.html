@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div class="panel-heading">
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <span> / </span>
+        <li class="active"><a href="{% url 'douban' %}">豆瓣</a></li>
+    </ol>
+</div>
+
+<table class="table">
+    <tr>
+        {% for movie in movies %}
+            <th scope="row">{{ movie.id }}</th>
+            <td>{{ movie.name }}</td>
+        {% endfor %}
+    </tr>
+</table>
+<script src="/static/jquery-3.3.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
